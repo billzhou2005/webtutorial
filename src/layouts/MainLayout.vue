@@ -6,6 +6,10 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
+          <q-img
+            :src="require('../assets/company2.svg')"
+            style="height: 32px; max-width: 32px"
+          />
           {{ $t('title') }}
         </q-toolbar-title>
         <div align="right">

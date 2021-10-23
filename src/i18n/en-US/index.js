@@ -8,6 +8,12 @@ export default {
   about: 'About',
   dgame: 'DGame',
   contact: 'Cooperation Contact',
+  dream: 'Light up your dream!',
+  welcome: 'Welcome to the best platform for building applications of APP, website, IoT Platform and Game App',
+  deployments: 'Deployments',
+  contents: 'Contents',
+  projects: 'Projects',
+  technical: 'Supported technical languages',
   failed: 'Action failed',
   success: 'Action was successful'
 }
