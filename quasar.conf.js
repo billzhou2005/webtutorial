@@ -140,8 +140,8 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: 'Quasar App',
-        short_name: 'Quasar App',
+        name: 'RHY-DGame',
+        short_name: 'RHY-DGame',
         description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',

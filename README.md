@@ -1,4 +1,4 @@
-# Quasar App (webtutorial)
+# RHY-DGame (webtutorial)
 
 A Quasar Framework app
 

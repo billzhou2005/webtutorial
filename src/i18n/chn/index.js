@@ -2,6 +2,8 @@
 // so you can safely delete all default props below
 
 export default {
+  lang: 'Language',
+  title: '福州市融海云信息科技有限公司-DG',
   home: '首页',
   about: '关于',
   dgame: 'DGame',

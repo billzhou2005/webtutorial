@@ -6,33 +6,19 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Title
+          {{ $t('title') }}
         </q-toolbar-title>
         <div align="right">
           <q-select
-            filled
-            v-model="model"
-            :options="options"
-            stack-label
-            label="Standard"
-            color="secondary"
-          >
-            <template v-slot:selected-item="scope">
-              <q-chip
-                dense
-                square
-                color="white"
-                text-color="secondary"
-                class="q-ma-none"
-              >
-                <q-avatar color="secondary" text-color="white" :icon="scope.opt.icon" />
-                {{ scope.opt.label }}
-              </q-chip>
-            </template>
-          </q-select>
+            v-model="locale"
+            :options="localeOptions"
+            :label="$t('lang')"
+            dense
+            emit-value
+            map-options
+            options-dense
+            style="min-width: 150px"
+          />
         </div>
       </q-toolbar>
 
@@ -74,84 +60,43 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'MP',
+    caption: '+86-19802191202',
+    icon: 'smartphone',
+    link: '/'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: 'Mail',
+    caption: 'billzhou2005@gmail.com',
+    icon: 'contact_mail',
+    link: '/'
   }
 ]
 
 import { defineComponent, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   name: 'MainLayout',
-
   components: {
     EssentialLink
   },
 
   setup () {
+    const { locale } = useI18n({ useScope: 'global' })
     const leftDrawerOpen = ref(false)
 
     return {
+      locale,
+      localeOptions: [
+        { value: 'en-US', label: 'English' },
+        { value: 'chn', label: '中文' }
+      ],
       essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      },
-      model: ref({
-        label: 'Google',
-        value: 'goog',
-        icon: 'mail'
-      }),
-      options: [
-        {
-          label: 'Google',
-          value: 'goog',
-          icon: 'mail'
-        },
-        {
-          label: 'Facebook',
-          value: 'fb',
-          icon: 'bluetooth'
-        }
-      ]
+      }
     }
   }
 })
