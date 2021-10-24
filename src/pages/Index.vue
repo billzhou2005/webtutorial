@@ -27,23 +27,21 @@
     background-size: 100% 100%;
     border: medium black;
     width: 100%;
-    height: 360px;
+    height: 400px;
     .title {
       font: 1.8em sans-serif;
     }
-    .my-card {
-      width: 15%;
-      height: 100%;
+    .mycard {
+      width: 100%;
+      height: 60%;
     }
   }
-  .bak {
-    background-color: #145a32;
+  .section4 {
+    background-color: black;
+    color: #ffffff;
     background-size: 100% 100%;
-    border: medium dashed black;
-    margin: 2px;
-    border-radius: 10%;
-    width: 800px;
-    height: 440px;
+    border: medium black;
+    width: 100%;
   }
 </style>
 
@@ -76,57 +74,47 @@
   </section>
   <section class="section3">
         <p class="q-pt-md text-center title"> {{ $t('technical')}} </p>
-        <div class="row flex flex-center">
-          <q-card class="q-mr-xs my-card">
-            <img :src="require('../assets/company2.svg')" style="height: 120px; max-width: 180px">
-            <q-card-section>
-              <div class="text-h6">Our Changing Planet</div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-          <q-card class="q-mr-xs my-card">
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-            <q-card-section>
-              <div class="text-h6">Our Changing Planet</div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-          <q-card class="q-mr-xs my-card">
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-            <q-card-section>
-              <div class="text-h6">Our Changing Planet</div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-          <q-card class="q-mr-xs my-card">
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-            <q-card-section>
-              <div class="text-h6">Our Changing Planet</div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-          <q-card class="q-mr-xs my-card">
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-            <q-card-section>
-              <div class="text-h6">Our Changing Planet</div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-          <q-card class="q-mr-xs my-card">
-            <img src="https://cdn.quasar.dev/img/mountains.jpg">
-            <q-card-section>
-              <div class="text-h6">Our Changing Planet</div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
+        <div class="q-pt-md justify-center row mycard">
+          <CardIndex
+            v-for="card in cards"
+            :key="card.index"
+            v-bind="card"
+          />
         </div>
+  </section>
+  <section class="section4">
+    <div class="row">
+      <div class="q-mt-md col-4 flex flex-center">
+        <p>Copyright &copy; 2021</p>
+      </div>
+      <div class="q-mt-md col-4 flex flex-center">
+        <p>ICP No.Waiting...</p>
+      </div>
+      <div class="col-4 flex flex-center">
+        <q-btn to="/" icon-right="home">{{ $t('home') }}</q-btn>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
+import CardIndex from 'components/CardIndex.vue'
 
 export default defineComponent({
-  name: 'PageIndex'
+  components: { CardIndex },
+  name: 'PageIndex',
+  data () {
+    return {
+      cards: [
+        { index: 0, points: 'Clojure', suits: 'clojure' },
+        { index: 1, points: 'Go', suits: 'go' },
+        { index: 2, points: 'Scala', suits: 'scala' },
+        { index: 3, points: 'Python', suits: 'python' },
+        { index: 4, points: 'AI', suits: 'aisample' },
+        { index: 5, points: 'BigData', suits: 'bigdata' }
+      ]
+    }
+  }
 })
 </script>
