@@ -14,6 +14,7 @@ export default {
   contents: '海量内容',
   projects: '成功案例',
   technical: '丰富的技术储备',
+  recruit: '招贤纳士',
   failed: '失败',
   success: '成功'
 }

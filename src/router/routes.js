@@ -15,6 +15,13 @@ const routes = [
     ]
   },
   {
+    path: '/Recruit',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Recruit.vue') }
+    ]
+  },
+  {
     path: '/dgame',
     component: () => import('layouts/MainLayout.vue'),
     children: [

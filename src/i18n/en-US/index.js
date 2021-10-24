@@ -14,6 +14,7 @@ export default {
   contents: 'Contents',
   projects: 'Projects',
   technical: 'Supported technical languages',
+  recruit: 'Recruit',
   failed: 'Action failed',
   success: 'Action was successful'
 }
