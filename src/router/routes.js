@@ -18,7 +18,7 @@ const routes = [
     path: '/Recruit',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Recruit.vue') }
+      { path: '', component: () => import('src/pages/Recruit.vue') }
     ]
   },
   {

@@ -5,7 +5,7 @@
 </style>
 
 <template>
-    <div class="q-pt-sm q-pl-xl row item">
+    <div class="q-pt-sm q-pl-xl item">
       <q-item clickable v-ripple>
         <q-item-section avatar>
           <q-avatar color="positive" text-color="white"> {{ catalog }} </q-avatar>

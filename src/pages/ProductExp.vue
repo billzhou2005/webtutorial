@@ -19,7 +19,7 @@
 
 <template>
   <section class="q-pa-xl flex justify-center section1" >
-    <div class="q-pl-xl q-pt-md row notice">{{ $t('productNotice')}}</div>
+    <div class="q-pl-xl q-pt-md row notice">{{ $t('productNotice') }}</div>
   </section>
   <section class="section4 footer">
     <div class="row">
