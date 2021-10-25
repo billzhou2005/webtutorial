@@ -22,6 +22,7 @@ export default {
   recruit4: '如果愿意推广我们开发的内容或产品',
   recruit5: '如果你愿意成为我们的合伙人，或者投资我们的业务',
   emailNotice: '请将你的简介发送至: billzhou2005@gmail.com',
+  productNotice: '即将推出，敬请期待...',
   failed: '失败',
   success: '成功'
 }
