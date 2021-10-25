@@ -1,5 +1,6 @@
 <style lang="scss" scoped>
 .recruit-item {
+  max-width: 800px;
   font: 1.8em sans-serif;
 }
 </style>

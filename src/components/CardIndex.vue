@@ -1,13 +1,13 @@
 <style lang="sass" scoped>
 .my-card
-  width: 200px
-  height: 270px
+  width: 15%
+  height: 310px
   color: #000000
   background-color: #FFFFFF
 </style>
 
 <template>
-  <q-card dark bordered class="q-mr-md shadow-3 my-card">
+  <q-card dark bordered class="q-ml-md shadow-3 my-card">
     <q-card-section>
       <q-img
         :src="require('../assets/img/'+suits+'.png')"

@@ -28,7 +28,7 @@
 
       <q-tabs align="left">
         <q-route-tab to="/" :label = "$t('home')" />
-        <q-route-tab to="/About" :label= "$t('about')" />
+        <q-route-tab to="/BizCooperation" :label= "$t('cooperation')" />
         <q-route-tab to="/Recruit" :label= "$t('recruit')" />
         <q-route-tab to="/DGame" :label= "$t('dgame')" />
       </q-tabs>

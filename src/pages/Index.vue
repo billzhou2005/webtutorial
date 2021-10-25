@@ -27,7 +27,7 @@
     background-size: 100% 100%;
     border: medium black;
     width: 100%;
-    height: 400px;
+    height: 440px;
     .title {
       font: 1.8em sans-serif;
     }
@@ -74,7 +74,7 @@
   </section>
   <section class="section3">
         <p class="q-pt-md text-center title"> {{ $t('technical')}} </p>
-        <div class="q-pt-md justify-center row mycard">
+        <div class="row q-pt-md justify-center  mycard">
           <CardIndex
             v-for="card in cards"
             :key="card.index"
@@ -82,7 +82,7 @@
           />
         </div>
   </section>
-  <section class="section4">
+  <section class="section4 footer">
     <div class="row">
       <div class="q-mt-md col-4 flex flex-center">
         <p>Copyright &copy; 2021</p>

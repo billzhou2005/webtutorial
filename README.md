@@ -1,6 +1,6 @@
 # RHY-DGame (webtutorial)
 
-A Quasar Framework app
+Developed by Billzhou @2021
 
 ## Install the dependencies
 ```bash

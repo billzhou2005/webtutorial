@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
   .section1 {
-    background-image: url('../assets/img/recruit.jpg');
+    background-image: url('../assets/img/cooperation.jpg');
     background-size: 100% 100%;
     width: 100%;
     height: 960px;

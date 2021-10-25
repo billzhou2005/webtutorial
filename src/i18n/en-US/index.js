@@ -5,7 +5,7 @@ export default {
   lang: '语言',
   title: 'RongHaiYun Information Technology Co.ltd-DletaGames,Fujian Province, China',
   home: 'Home',
-  about: 'About',
+  cooperation: 'Business Cooperation',
   dgame: 'DGame',
   contact: 'Cooperation Contact',
   dream: 'Light up your dream!',
@@ -15,6 +15,12 @@ export default {
   projects: 'Projects',
   technical: 'Supported technical languages',
   recruit: 'Recruit',
+  recruit1: 'If you are dedicated, you are willing to grow with the team',
+  recruit2: 'If you are willing to engage in Internet-related software development',
+  recruit3: 'If you have any one or more experiences in front end, back end, art design, project management, product management, etc',
+  recruit4: 'If you are willing to promote the content or products we develop',
+  recruit5: 'If you would like to become a partner or invest in our business',
+  emailNotice: 'Please send your profile to: billzhou2005@gmail.com',
   failed: 'Action failed',
   success: 'Action was successful'
 }
