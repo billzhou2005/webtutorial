@@ -25,7 +25,7 @@
       :key="item.index"
       v-bind="item"
     />
-    <div class="q-pl-xl q-ml-xl q-pt-md row email-notice">{{ $t('emailNotice')}}</div>
+    <div class="q-pl-xl q-pt-md row email-notice">{{ $t('emailNotice')}}</div>
   </section>
   <section class="section4 footer">
     <div class="row">

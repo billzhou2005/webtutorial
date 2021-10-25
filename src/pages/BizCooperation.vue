@@ -19,13 +19,51 @@
 </style>
 
 <template>
-  <section class="q-pt-xl section1" >
-    <RecruitItem
-      v-for="item in items"
-      :key="item.index"
-      v-bind="item"
-    />
-    <div class="q-pl-xl q-ml-xl q-pt-md row email-notice">{{ $t('emailNotice')}}</div>
+  <section class="q-pa-xl flex justify-center section1" >
+    <div class="q-pa-md" style="max-width: 400px">
+
+      <q-form
+        @submit="onSubmit"
+        @reset="onReset"
+        class="q-gutter-md"
+      >
+        <q-input
+          filled
+          v-model="name"
+          label="Your name *"
+          hint="Name and surname"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Please type something']"
+        />
+
+        <q-input
+          filled
+          type="number"
+          v-model="age"
+          label="Your age *"
+          lazy-rules
+          :rules="[
+            val => val !== null && val !== '' || 'Please type your age',
+            val => val > 0 && val < 100 || 'Please type a real age'
+          ]"
+        />
+        <q-input v-model="tel" filled type="tel" hint="Telephone number" />
+        <q-input v-model="email" filled type="email" hint="Email" />
+        <q-input
+          v-model="text"
+          filled
+          autogrow
+          hint="Cooperation description"
+        />
+
+        <q-toggle v-model="accept" label="I accept the license and terms" />
+        <div>
+          <q-btn label="Submit" type="submit" color="primary"/>
+          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+        </div>
+      </q-form>
+
+    </div>
   </section>
   <section class="section4 footer">
     <div class="row">
@@ -43,21 +81,49 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import RecruitItem from 'components/RecruitItem.vue'
+import { defineComponent, ref } from 'vue'
+import { useQuasar } from 'quasar'
 
 export default defineComponent({
-  components: { RecruitItem },
-  name: 'Recruit',
-  data () {
+  name: 'bizCooperation',
+  setup () {
+    const $q = useQuasar()
+
+    const name = ref(null)
+    const age = ref(null)
+    const accept = ref(false)
+
     return {
-      items: [
-        { index: 0, catalog: 'A', description: 'recruit1' },
-        { index: 1, catalog: 'B', description: 'recruit2' },
-        { index: 2, catalog: 'C', description: 'recruit3' },
-        { index: 3, catalog: 'D', description: 'recruit4' },
-        { index: 4, catalog: 'E', description: 'recruit5' }
-      ]
+      name,
+      age,
+      accept,
+      email: ref(''),
+      tel: ref(''),
+      text: ref(''),
+
+      onSubmit () {
+        if (accept.value !== true) {
+          $q.notify({
+            color: 'red-5',
+            textColor: 'white',
+            icon: 'warning',
+            message: 'You need to accept the license and terms first'
+          })
+        } else {
+          $q.notify({
+            color: 'green-4',
+            textColor: 'white',
+            icon: 'cloud_done',
+            message: 'Submitted'
+          })
+        }
+      },
+
+      onReset () {
+        name.value = null
+        age.value = null
+        accept.value = false
+      }
     }
   }
 })
