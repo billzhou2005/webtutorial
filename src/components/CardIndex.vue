@@ -1,9 +1,10 @@
-<style lang="sass" scoped>
-.my-card
-  width: 15%
-  height: 310px
-  color: #000000
-  background-color: #FFFFFF
+<style lang="scss" scoped>
+.my-card {
+  width: 15%;
+  height: 310px;
+  color: #000000;
+  background-color: #FFFFFF;
+}
 </style>
 
 <template>

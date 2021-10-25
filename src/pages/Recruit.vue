@@ -4,7 +4,7 @@
     background-size: 100% 100%;
     width: 100%;
     height: 960px;
-    .email-notice {
+    .notice {
       font: 1.4em sans-serif;
       color: blue;
     }
@@ -25,7 +25,7 @@
       :key="item.index"
       v-bind="item"
     />
-    <div class="q-pl-xl q-pt-md row email-notice">{{ $t('emailNotice')}}</div>
+    <div class="q-pl-xl q-pt-md row notice">{{ $t('emailNotice')}}</div>
   </section>
   <section class="section4 footer">
     <div class="row">

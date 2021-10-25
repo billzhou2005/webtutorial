@@ -1,12 +1,11 @@
 <style lang="scss" scoped>
-.recruit-item {
-  max-width: 800px;
+.item {
   font: 1.8em sans-serif;
 }
 </style>
 
 <template>
-    <div class="q-pt-sm q-pl-xl row recruit-item">
+    <div class="q-pt-sm q-pl-xl row item">
       <q-item clickable v-ripple>
         <q-item-section avatar>
           <q-avatar color="positive" text-color="white"> {{ catalog }} </q-avatar>
@@ -20,7 +19,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'CardFront',
+  name: 'RecruitItem',
   props: {
     index: {
       type: Number,
@@ -28,11 +27,11 @@ export default defineComponent({
     },
     catalog: {
       type: String,
-      default: '0'
+      default: 'A'
     },
     description: {
       type: String,
-      default: 'spade'
+      default: 'recruit1'
     }
   }
 })
