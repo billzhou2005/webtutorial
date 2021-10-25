@@ -7,6 +7,7 @@ export default {
   home: 'Home',
   cooperation: 'Business Cooperation',
   dgame: 'DGame',
+  productExp: 'Product Experience',
   contact: 'Cooperation Contact',
   dream: 'Light up your dream!',
   welcome: 'Welcome to the best platform for building applications of APP, website, IoT Platform and Game App',

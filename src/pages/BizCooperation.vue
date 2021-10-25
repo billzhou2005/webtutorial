@@ -4,9 +4,8 @@
     background-size: 100% 100%;
     width: 100%;
     height: 960px;
-    .email-notice {
-      font: 1.4em sans-serif;
-      color: blue;
+    .notice {
+      font: 1.6em sans-serif;
     }
   }
   .section4 {
@@ -21,42 +20,32 @@
 <template>
   <section class="q-pa-xl flex justify-center section1" >
     <div class="q-pa-md" style="max-width: 400px">
-
       <q-form
         @submit="onSubmit"
         @reset="onReset"
-        class="q-gutter-md"
+        class="q-gutter-sm"
       >
+        <q-lable class="notice">请留下你的联系方式:</q-lable>
         <q-input
           filled
+          bg-color="blue-grey-2"
           v-model="name"
           label="Your name *"
-          hint="Name and surname"
           lazy-rules
           :rules="[ val => val && val.length > 0 || 'Please type something']"
         />
 
-        <q-input
-          filled
-          type="number"
-          v-model="age"
-          label="Your age *"
-          lazy-rules
-          :rules="[
-            val => val !== null && val !== '' || 'Please type your age',
-            val => val > 0 && val < 100 || 'Please type a real age'
-          ]"
-        />
-        <q-input v-model="tel" filled type="tel" hint="Telephone number" />
-        <q-input v-model="email" filled type="email" hint="Email" />
+        <q-input v-model="tel" filled bg-color="blue-grey-2" type="tel" label="Your telephone" hint=" " />
+        <q-input v-model="email" filled bg-color="blue-grey-2" type="email" label="Your email *" hint=" " />
         <q-input
           v-model="text"
           filled
+          bg-color="blue-grey-2"
           autogrow
-          hint="Cooperation description"
+          label="Cooperation contents"
+          hint=" "
         />
 
-        <q-toggle v-model="accept" label="I accept the license and terms" />
         <div>
           <q-btn label="Submit" type="submit" color="primary"/>
           <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
@@ -88,28 +77,27 @@ export default defineComponent({
   name: 'bizCooperation',
   setup () {
     const $q = useQuasar()
-
     const name = ref(null)
-    const age = ref(null)
-    const accept = ref(false)
+    const tel = ref(null)
+    const email = ref(null)
+    const text = ref(null)
 
     return {
       name,
-      age,
-      accept,
-      email: ref(''),
-      tel: ref(''),
-      text: ref(''),
+      tel,
+      email,
+      text,
 
       onSubmit () {
-        if (accept.value !== true) {
+        if (tel.value == null) {
           $q.notify({
             color: 'red-5',
             textColor: 'white',
             icon: 'warning',
-            message: 'You need to accept the license and terms first'
+            message: 'You need to fill a phone number'
           })
         } else {
+          console.log(name, tel, email, text)
           $q.notify({
             color: 'green-4',
             textColor: 'white',
@@ -121,8 +109,9 @@ export default defineComponent({
 
       onReset () {
         name.value = null
-        age.value = null
-        accept.value = false
+        tel.value = null
+        email.value = null
+        text.value = null
       }
     }
   }

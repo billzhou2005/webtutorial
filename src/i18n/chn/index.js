@@ -7,6 +7,7 @@ export default {
   home: '首页',
   cooperation: '商务合作',
   dgame: 'DGame',
+  productExp: '产品体验',
   contact: '合作联系方式',
   dream: '点燃您的梦想!',
   welcome: '欢迎您的光临，我们将为互联网APP、网站、物联网IoT平台以及游戏应用等提供最好的软件开发服务',
