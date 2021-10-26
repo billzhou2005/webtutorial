@@ -81,6 +81,7 @@
 import { defineComponent, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { useI18n } from 'vue-i18n'
+import { api } from 'src/boot/axios'
 
 export default defineComponent({
   name: 'bizCooperation',
@@ -91,6 +92,13 @@ export default defineComponent({
     const tel = ref(null)
     const email = ref(null)
     const text = ref(null)
+    const form = {
+      name: '',
+      tel: '',
+      email: '',
+      description: '',
+      locale: ''
+    }
 
     return {
       name,
@@ -99,7 +107,18 @@ export default defineComponent({
       text,
 
       onSubmit () {
-        console.log(name, tel, email, text, locale.value)
+        form.name = name.value
+        form.tel = tel.value
+        form.email = email.value
+        form.description = text.value
+        form.locale = locale.value
+
+        console.log(form)
+        api.post('/bizinfo', form).then((res) => {
+          console.log(res.data)
+        }).catch((err) => {
+          console.log(err)
+        })
 
         $q.notify({ color: 'green-4', textColor: 'white', icon: 'cloud_done', message: t('submitNotice') })
       },

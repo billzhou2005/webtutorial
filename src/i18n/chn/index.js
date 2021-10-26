@@ -3,7 +3,7 @@
 
 export default {
   lang: 'Language',
-  title: '福州市融海云信息科技有限公司-DG',
+  title: '融海云信息科技有限公司',
   home: '首页',
   cooperation: '商务合作',
   dgame: 'DGame',
