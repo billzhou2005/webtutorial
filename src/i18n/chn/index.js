@@ -22,7 +22,15 @@ export default {
   recruit4: '如果愿意推广我们开发的内容或产品',
   recruit5: '如果你愿意成为我们的合伙人，或者投资我们的业务',
   emailNotice: '请将你的简介发送至:',
+  bizContactNotice: '请留下你的联系方式...',
+  bizName: '你的称呼 *',
+  bizNameNotice: '称呼不能为空',
+  bizTel: '你的联系电话 *',
+  bizEmail: '你的email地址 *',
+  bizComment: '具体合作内容',
   productNotice: '即将推出，敬请期待...',
+  submit: '确定',
+  reset: '重置',
   failed: '失败',
   success: '成功'
 }

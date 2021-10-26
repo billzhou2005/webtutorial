@@ -21,8 +21,16 @@ export default {
   recruit3: 'If you have any one or more experiences in front end, back end, art design, project management, product management, etc',
   recruit4: 'If you are willing to promote the content or products we develop',
   recruit5: 'If you would like to become a partner or invest in our business',
+  bizContactNotice: 'Please leave your contact details',
   emailNotice: 'Please send your profile to:',
+  bizName: 'Your name *',
+  bizNameNotice: 'Please input something for your name',
+  bizTel: 'Your telephone *',
+  bizEmail: 'Your email *',
+  bizComment: 'Cooperation comments',
   productNotice: 'Coming soon, please wait...',
+  submit: 'Submit',
+  reset: 'Reset',
   failed: 'Action failed',
   success: 'Action was successful'
 }

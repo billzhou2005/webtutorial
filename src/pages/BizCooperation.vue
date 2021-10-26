@@ -25,30 +25,30 @@
         @reset="onReset"
         class="q-gutter-sm"
       >
-        <q-lable class="notice">请留下你的联系方式:</q-lable>
+        <q-lable class="notice">{{ $t('bizContactNotice') }}</q-lable>
         <q-input
           filled
           bg-color="blue-grey-2"
           v-model="name"
-          label="Your name *"
+          :label="$t('bizName')"
           lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Please type something']"
+          :rules="[ val => val && val.length > 0 || $t('bizNameNotice') ]"
         />
 
-        <q-input v-model="tel" filled bg-color="blue-grey-2" type="tel" label="Your telephone" hint=" " />
-        <q-input v-model="email" filled bg-color="blue-grey-2" type="email" label="Your email *" hint=" " />
+        <q-input v-model="tel" filled bg-color="blue-grey-2" type="tel" :label="$t('bizTel')" hint=" " />
+        <q-input v-model="email" filled bg-color="blue-grey-2" type="email" :label="$t('bizEmail')" hint=" " />
         <q-input
           v-model="text"
           filled
           bg-color="blue-grey-2"
           autogrow
-          label="Cooperation contents"
+          :label="$t('bizComment')"
           hint=" "
         />
 
         <div>
-          <q-btn label="Submit" type="submit" color="primary"/>
-          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+          <q-btn :label="$t('submit')" type="submit" color="primary"/>
+          <q-btn :label="$t('reset')" type="reset" color="primary" flat class="q-ml-sm" />
         </div>
       </q-form>
 
