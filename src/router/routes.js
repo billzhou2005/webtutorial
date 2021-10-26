@@ -18,14 +18,14 @@ const routes = [
     path: '/Recruit',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Recruit.vue') }
+      { path: '', component: () => import('src/pages/Recruit.vue') }
     ]
   },
   {
-    path: '/dgame',
+    path: '/ProductExp',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/dgame.vue') }
+      { path: '', component: () => import('src/pages/ProductExp.vue') }
     ]
   },
 

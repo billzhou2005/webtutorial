@@ -7,6 +7,7 @@ export default {
   home: 'Home',
   cooperation: 'Business Cooperation',
   dgame: 'DGame',
+  productExp: 'Product Experience',
   contact: 'Cooperation Contact',
   dream: 'Light up your dream!',
   welcome: 'Welcome to the best platform for building applications of APP, website, IoT Platform and Game App',
@@ -20,7 +21,8 @@ export default {
   recruit3: 'If you have any one or more experiences in front end, back end, art design, project management, product management, etc',
   recruit4: 'If you are willing to promote the content or products we develop',
   recruit5: 'If you would like to become a partner or invest in our business',
-  emailNotice: 'Please send your profile to: ',
+  mailinfo: 'Please send your profile to:',
+  productNotice: 'Coming soon, please wait...',
   failed: 'Action failed',
   success: 'Action was successful'
 }

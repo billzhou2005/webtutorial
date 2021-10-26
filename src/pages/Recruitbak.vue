@@ -1,17 +1,13 @@
 <style lang="scss" scoped>
   .section1 {
-    background-image: url('../assets/img/recruit3.jpg');
+    background-image: url('../assets/img/recruit.jpg');
     background-size: 100% 100%;
     width: 100%;
-    height: 600px;
-  }
-  .section2 {
-    background-size: 100% 100%;
-    background-color: #c4dfd0;
-    font: 1.8em sans-serif;
-    color: blue;
-    width: 100%;
-    height: 100px;
+    height: 960px;
+    .notice {
+      font: 1.4em sans-serif;
+      color: blue;
+    }
   }
   .section4 {
     background-color: black;
@@ -23,13 +19,15 @@
 </style>
 
 <template>
-  <section class="q-pt-xl section1" >
-    <RecruitItem
-      v-for="item in items"
-      :key="item.index"
-      v-bind="item"
-    />
-    <div class="q-pl-xl q-pt-md row email-notice">{{ $t('emailNotice') }} billzhou2005@gmail.com</div>
+  <section class="section1" >
+    <div class="q-pt-xl myItems">
+      <RecruitItem
+        v-for="item in items"
+        :key="item.index"
+        v-bind="item"
+      />
+    </div>
+    <div class="q-pl-xl q-pt-md row notice">{{ $t('emailNotice')}}</div>
   </section>
   <section class="section4 footer">
     <div class="row">
@@ -49,6 +47,7 @@
 <script>
 import { defineComponent } from 'vue'
 import RecruitItem from 'components/RecruitItem.vue'
+
 export default defineComponent({
   components: { RecruitItem },
   name: 'Recruit',
