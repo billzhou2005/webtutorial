@@ -26,10 +26,12 @@ export default {
   bizName: '你的称呼 *',
   bizNameNotice: '称呼不能为空',
   bizTel: '你的联系电话 *',
+  bizTelNotice: '联系电话格式不对',
   bizEmail: '你的email地址 *',
   bizComment: '具体合作内容',
   productNotice: '即将推出，敬请期待...',
   submit: '确定',
+  submitNotice: '您的信息已经提交，工作人员会尽快和您联系，谢谢！',
   reset: '重置',
   failed: '失败',
   success: '成功'

@@ -35,7 +35,15 @@
           :rules="[ val => val && val.length > 0 || $t('bizNameNotice') ]"
         />
 
-        <q-input v-model="tel" filled bg-color="blue-grey-2" type="tel" :label="$t('bizTel')" hint=" " />
+        <q-input
+          v-model="tel"
+          filled bg-color="blue-grey-2"
+          type="tel"
+          :label="$t('bizTel')"
+          hint=" "
+          lazy-rules
+          :rules="[ val => val && val.length > 10 || $t('bizTelNotice') ]"
+        />
         <q-input v-model="email" filled bg-color="blue-grey-2" type="email" :label="$t('bizEmail')" hint=" " />
         <q-input
           v-model="text"
@@ -72,11 +80,13 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import { useQuasar } from 'quasar'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   name: 'bizCooperation',
   setup () {
     const $q = useQuasar()
+    const { t, locale } = useI18n({ useScope: 'global' })
     const name = ref(null)
     const tel = ref(null)
     const email = ref(null)
@@ -89,22 +99,9 @@ export default defineComponent({
       text,
 
       onSubmit () {
-        if (tel.value == null) {
-          $q.notify({
-            color: 'red-5',
-            textColor: 'white',
-            icon: 'warning',
-            message: 'You need to fill a phone number'
-          })
-        } else {
-          console.log(name, tel, email, text)
-          $q.notify({
-            color: 'green-4',
-            textColor: 'white',
-            icon: 'cloud_done',
-            message: 'Submitted'
-          })
-        }
+        console.log(name, tel, email, text, locale.value)
+
+        $q.notify({ color: 'green-4', textColor: 'white', icon: 'cloud_done', message: t('submitNotice') })
       },
 
       onReset () {

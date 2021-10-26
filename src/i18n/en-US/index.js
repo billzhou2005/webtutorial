@@ -26,10 +26,12 @@ export default {
   bizName: 'Your name *',
   bizNameNotice: 'Please input something for your name',
   bizTel: 'Your telephone *',
+  bizTelNotice: 'You need to fill a valid phone number',
   bizEmail: 'Your email *',
   bizComment: 'Cooperation comments',
   productNotice: 'Coming soon, please wait...',
   submit: 'Submit',
+  submitNotice: 'Your information has been submitted, the staff will contact you as soon as possible, thank you!',
   reset: 'Reset',
   failed: 'Action failed',
   success: 'Action was successful'
