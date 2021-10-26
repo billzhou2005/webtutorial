@@ -20,7 +20,7 @@ export default {
   recruit3: 'If you have any one or more experiences in front end, back end, art design, project management, product management, etc',
   recruit4: 'If you are willing to promote the content or products we develop',
   recruit5: 'If you would like to become a partner or invest in our business',
-  emailNotice: 'Please send your profile to: billzhou2005@gmail.com',
+  emailNotice: 'Please send your profile to: ',
   failed: 'Action failed',
   success: 'Action was successful'
 }
