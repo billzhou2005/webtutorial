@@ -1,5 +1,6 @@
 <style lang="scss" scoped>
 .item {
+  max-width: 960px;
   font: 1.8em sans-serif;
 }
 </style>
