@@ -1,17 +1,13 @@
 <style lang="scss" scoped>
   .section1 {
-    background-image: url('../assets/img/recruit3.jpg');
+    background-image: url('../assets/img/recruit.jpg');
     background-size: 100% 100%;
     width: 100%;
-    height: 600px;
-  }
-  .section2 {
-    background-size: 100% 100%;
-    background-color: #c4dfd0;
-    font: 1.8em sans-serif;
-    color: blue;
-    width: 100%;
-    height: 100px;
+    height: 860px;
+    .email-notice {
+      font: 1.4em sans-serif;
+      color: blue;
+    }
   }
   .section4 {
     background-color: black;
@@ -29,7 +25,7 @@
       :key="item.index"
       v-bind="item"
     />
-    <div class="q-pl-xl q-pt-md row email-notice">{{ $t('emailNotice') }} billzhou2005@gmail.com</div>
+    <div class="q-pl-xl q-pt-xl row email-notice">{{ $t('emailNotice') }} billzhou2005@gmail.com</div>
   </section>
   <section class="section4 footer">
     <div class="row">
