@@ -33,7 +33,7 @@
         <p>Copyright &copy; 2021</p>
       </div>
       <div class="q-mt-md col-4 flex flex-center">
-        <p>ICP No.Waiting...</p>
+        <p>闽ICP备2022003119号</p>
       </div>
       <div class="col-4 flex flex-center">
         <q-btn to="/" icon-right="home">{{ $t('home') }}</q-btn>

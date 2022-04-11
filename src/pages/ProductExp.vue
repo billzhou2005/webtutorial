@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
   .section1 {
-    background-image: url('../assets/img/productexp.jpg');
+    background-image: url('../assets/img/datashow.png');
     background-size: 100% 100%;
     width: 100%;
     height: 960px;
@@ -19,7 +19,7 @@
 
 <template>
   <section class="q-pa-xl flex justify-center section1" >
-    <div class="q-pl-xl q-pt-md row notice">{{ $t('productNotice') }}</div>
+    <div class="q-pl-xl q-pt-md row notice">{{  }}</div>
   </section>
   <section class="section4 footer">
     <div class="row">
@@ -27,7 +27,7 @@
         <p>Copyright &copy; 2021</p>
       </div>
       <div class="q-mt-md col-4 flex flex-center">
-        <p>ICP No.Waiting...</p>
+        <p>闽ICP备2022003119号</p>
       </div>
       <div class="col-4 flex flex-center">
         <q-btn to="/" icon-right="home">{{ $t('home') }}</q-btn>
