@@ -31,13 +31,16 @@
   </section>
   <section class="section4 footer">
     <div class="row">
-      <div class="q-mt-md col-4 flex flex-center">
+      <div class="q-mt-md col-3 flex flex-center">
         <p>Copyright &copy; 2021</p>
       </div>
-      <div class="q-mt-md col-4 flex flex-center">
+      <div class="q-mt-md col-3 flex flex-center">
         <p>闽ICP备2022003119号</p>
       </div>
-      <div class="col-4 flex flex-center">
+      <div class="q-mt-md col-3 flex flex-center">
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35010202001523" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">闽公网安备 35010202001523号</p></a>
+      </div>
+      <div class="col-3 flex flex-center">
         <q-btn to="/" icon-right="home">{{ $t('home') }}</q-btn>
       </div>
     </div>

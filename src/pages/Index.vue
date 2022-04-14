@@ -37,8 +37,8 @@
     }
   }
   .section4 {
-    background-color: black;
-    color: #ffffff;
+    background-color: white;
+    color: blue;
     background-size: 100% 100%;
     border: medium black;
     width: 100%;
@@ -84,13 +84,18 @@
   </section>
   <section class="section4 footer">
     <div class="row">
-      <div class="q-mt-md col-4 flex flex-center">
-        <p>Copyright &copy; 2021</p>
+      <div class="q-mt-md col-3 flex flex-center">
+        <p>Copyright &copy; 2022</p>
       </div>
-      <div class="q-mt-md col-4 flex flex-center">
+      <div class="q-mt-md col-3 flex flex-center">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35010202001523" ><img src="../assets/icon-beian.png" style="float:left;"/>
+         <p>闽公网安备 35010202001523号</p>
+        </a>
+      </div>
+      <div class="q-mt-md col-3 flex flex-center">
         <p>闽ICP备2022003119号</p>
       </div>
-      <div class="col-4 flex flex-center">
+      <div class="col-3 flex flex-center">
         <q-btn to="/" icon-right="home">{{ $t('home') }}</q-btn>
       </div>
     </div>
