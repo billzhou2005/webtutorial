@@ -1,11 +1,14 @@
 <style lang="scss" scoped>
   .section1 {
-    background-image: url('../assets/img/datashow.png');
+    background-image: url('../assets/img/productexp.jpg');
     background-size: 100% 100%;
     width: 100%;
     height: 960px;
-    .notice {
-      font: 1.6em sans-serif;
+    .title {
+      font: 2.2em sans-serif;
+    }
+    .download-item {
+      font: 1.2em sans-serif;
     }
   }
   .section4 {
@@ -19,7 +22,27 @@
 
 <template>
   <section class="q-pa-xl flex justify-center section1" >
-    <div class="q-pl-xl q-pt-md row notice">{{  }}</div>
+    <div class="items-start">
+      <div class="row q-mt-md flex flex-center title">
+        <p>"5 10 K"产品体验</p>
+      </div>
+      <div class="row">
+        <div class="q-mt-md col-6 flex flex-left download-item">
+          PC版本
+        </div>
+        <div class="q-mt-md col-6 flex flex-center">
+          <button v-on:click="download()">下载</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="q-mt-md col-6 flex flex-left download-item">
+          Android版本
+        </div>
+        <div class="q-mt-md col-6 flex flex-center">
+          <button v-on:click="download()">下载</button>
+        </div>
+      </div>
+    </div>
   </section>
   <section class="section4 footer">
     <div class="row">
@@ -43,8 +66,29 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { api } from 'src/boot/axios'
 
 export default defineComponent({
-  name: 'ProductExp'
+  name: 'ProductExp',
+  setup () {
+    return {
+      download () {
+        api({
+          url: 'http://192.168.61.3:9092/local/ftkapk',
+          method: 'GET',
+          responseType: 'blob'
+        })
+          .then((response) => {
+            const url = window.URL
+              .createObjectURL(new Blob([response.data]))
+            const link = document.createElement('a')
+            link.href = url
+            link.setAttribute('download', 'ftk.apk')
+            document.body.appendChild(link)
+            link.click()
+          })
+      }
+    }
+  }
 })
 </script>
