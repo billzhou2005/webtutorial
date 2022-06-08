@@ -31,7 +31,7 @@
           PC版本
         </div>
         <div class="q-mt-md col-6 flex flex-center">
-          <button v-on:click="download()">下载</button>
+          <button v-on:click="download('test.7z')">下载</button>
         </div>
       </div>
       <div class="row">
@@ -39,7 +39,7 @@
           Android版本
         </div>
         <div class="q-mt-md col-6 flex flex-center">
-          <button v-on:click="download()">下载</button>
+          <button v-on:click="download('FTK-3D.7z')">下载</button>
         </div>
       </div>
     </div>
@@ -72,18 +72,32 @@ export default defineComponent({
   name: 'ProductExp',
   setup () {
     return {
-      download () {
+      download (e) {
+        const filename = e
+        let fileUrl = '/download/'
+        fileUrl += filename
+        console.log('download url:', fileUrl)
+
         api({
-          url: 'http://192.168.61.3:9092/local/ftkapk',
+          url: fileUrl,
           method: 'GET',
-          responseType: 'blob'
+          responseType: 'blob',
+          onDownloadProgress: (evt) => {
+            this.percentage = parseInt(
+              (evt.loaded / evt.total) * 100
+            )
+            console.log('download progress:', this.percentage)
+            if (this.percentage === 100) {
+              this.progressSuccess = 'success'
+            }
+          }
         })
           .then((response) => {
             const url = window.URL
               .createObjectURL(new Blob([response.data]))
             const link = document.createElement('a')
             link.href = url
-            link.setAttribute('download', 'ftk.apk')
+            link.setAttribute('download', filename)
             document.body.appendChild(link)
             link.click()
           })
