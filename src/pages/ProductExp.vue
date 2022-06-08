@@ -27,19 +27,25 @@
         <p>"5 10 K"产品体验</p>
       </div>
       <div class="row">
-        <div class="q-mt-md col-6 flex flex-left download-item">
+        <div class="q-mt-md col-4 flex flex-left download-item">
           PC版本
         </div>
-        <div class="q-mt-md col-6 flex flex-center">
-          <button v-on:click="download('test.7z')">下载</button>
+        <div class="q-mt-md col-4 flex flex-center">
+          <q-btn color="white" text-color="black" v-on:click="downloadPc()" >下载</q-btn>
+        </div>
+        <div class="q-mt-md col-4 flex flex-center">
+          <q-linear-progress :value="progressPc" color="warning" class="q-mt-sm" />
         </div>
       </div>
       <div class="row">
-        <div class="q-mt-md col-6 flex flex-left download-item">
+        <div class="q-mt-md col-4 flex flex-left download-item">
           Android版本
         </div>
-        <div class="q-mt-md col-6 flex flex-center">
-          <button v-on:click="download('FTK-3D.7z')">下载</button>
+        <div class="q-mt-md col-4 flex flex-center">
+          <q-btn color="white" text-color="black" v-on:click="downloadAndroid()" >下载</q-btn>
+        </div>
+        <div class="q-mt-md col-4 flex flex-center">
+          <q-linear-progress :value="progressAndroid" color="warning" class="q-mt-sm" />
         </div>
       </div>
     </div>
@@ -65,17 +71,31 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { api } from 'src/boot/axios'
 
 export default defineComponent({
   name: 'ProductExp',
   setup () {
+    const progressPc = ref(0.02)
+    const progressAndroid = ref(0.02)
+    let isPcFileDownloading = false
+    let isAndroidFileDownloading = false
+
     return {
-      download (e) {
-        const filename = e
+      progressPc,
+      progressAndroid,
+      isPcFileDownloading,
+      isAndroidFileDownloading,
+      downloadPc () {
+        if (isPcFileDownloading) {
+          return
+        }
+        const filename = 'test.7z'
         let fileUrl = '/download/'
         fileUrl += filename
+        progressPc.value = 0.02
+        isPcFileDownloading = true
         console.log('download url:', fileUrl)
 
         api({
@@ -83,12 +103,43 @@ export default defineComponent({
           method: 'GET',
           responseType: 'blob',
           onDownloadProgress: (evt) => {
-            this.percentage = parseInt(
-              (evt.loaded / evt.total) * 100
-            )
-            console.log('download progress:', this.percentage)
-            if (this.percentage === 100) {
-              this.progressSuccess = 'success'
+            progressPc.value = (evt.loaded / evt.total)
+            // console.log('download progress:', progressPc.value)
+            if (progressPc.value === 1) {
+              isPcFileDownloading = false
+            }
+          }
+        })
+          .then((response) => {
+            const url = window.URL
+              .createObjectURL(new Blob([response.data]))
+            const link = document.createElement('a')
+            link.href = url
+            link.setAttribute('download', filename)
+            document.body.appendChild(link)
+            link.click()
+          })
+      },
+      downloadAndroid () {
+        if (isAndroidFileDownloading) {
+          return
+        }
+        const filename = 'FTK-3D.7z'
+        let fileUrl = '/download/'
+        fileUrl += filename
+        progressAndroid.value = 0.02
+        isAndroidFileDownloading = true
+        console.log('download url:', fileUrl)
+
+        api({
+          url: fileUrl,
+          method: 'GET',
+          responseType: 'blob',
+          onDownloadProgress: (evt) => {
+            progressAndroid.value = (evt.loaded / evt.total)
+            // console.log('download progress:', progressAndroid.value)
+            if (progressAndroid.value === 1) {
+              isAndroidFileDownloading = false
             }
           }
         })
