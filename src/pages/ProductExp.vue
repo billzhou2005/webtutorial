@@ -118,6 +118,8 @@ export default defineComponent({
             link.setAttribute('download', filename)
             document.body.appendChild(link)
             link.click()
+            document.body.removeChild(link)
+            URL.revokeObjectURL(url)
           })
       },
       downloadAndroid () {
@@ -151,6 +153,8 @@ export default defineComponent({
             link.setAttribute('download', filename)
             document.body.appendChild(link)
             link.click()
+            document.body.removeChild(link)
+            URL.revokeObjectURL(url)
           })
       }
     }
